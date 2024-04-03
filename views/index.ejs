@@ -50,12 +50,14 @@
                             
 
                             <% if (nasaData) { %>
-                                <h2>Astronomy Picture Of the Day</h2>
+                                <h3>Astronomy Picture Of the Day</h3>
                                 <div class="">
-                                    <h3><%= nasaData.title %></h3>
+                                    <h5><%= nasaData.title %></h5>
                                     <p> <%= nasaData.date %> </p>
-                                    <img src="<%= nasaData.url %>" alt="image from NASA">
-                                    <p> <%= nasaData.explanation %> </p>
+                                    <div class="nasa-img-div">
+                                        <img src="<%= nasaData.url %>" alt="image from NASA" class="nasa-img">
+                                    </div>
+                                        <p> <%= nasaData.explanation %> </p>
                                 </div>
                                 <% } %>
                         </div>
