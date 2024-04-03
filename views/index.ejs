@@ -63,40 +63,57 @@
                             <% if (mlData) { %>
                             <div class="col-sm">
                             
-                            <div class="">
-                                
                                 <h3>Events: </h3>
-                                <% for(let i=-0; i < mlData.data.Events.length ; i++) {%>
-                                    <p><%= mlData.data.Events[i].text; %></p>
-                                    <p><%= mlData.data.Events[i].year; %></p>
-                                    <!-- <p><%= mlData.data.Events[i].no_year_html; %></p> -->
-                                <% } %>
-                                
-                            </div>
+                                <div class="card-deck">
+                                    
+                                    <% for(let i=-0; i < mlData.data.Events.length ; i++) {%>
+                                        <div class="card">
+                                            <div class="card-body">
+                                        <h6><%= mlData.data.Events[i].text; %></h6>
+                                        <p><%= mlData.data.Events[i].year; %></p>
+                                        <!-- <p><%= mlData.data.Events[i].no_year_html; %></p> -->
+                                    
+                                    </div>
+                                </div>
+                                        <% } %>
+                               
+                                </div>
                             
                         </div>
 
                         <div class="col-sm">
-                            <div class="">
-                                <h3>Births: </h3>
+                            <h3>Births: </h3>
+                            <div class="card-deck">
+                                
                                 <% for(let i=-0; i < mlData.data.Births.length ; i++) {%>
-                                    <p><%= mlData.data.Births[i].text; %></p>
+                                    <div class="card">
+                                        <div class="card-body">
+                                    <h6><%= mlData.data.Births[i].text; %></h6>
                                     <p><%= mlData.data.Births[i].year; %></p>
                                     <!-- <p><%= mlData.data.Births[i].no_year_html; %></p> -->
-                                <% } %>
                                 
+                                </div>
+                            </div>
+                                    <% } %>
+                           
                             </div>
                         </div>
 
                         <div class="col-sm">
-                            <div class="">
-                                <h3>Deaths: </h3>
+                            <h3>Deaths: </h3>
+                            <div class="card-deck">
+                                
                                 <% for(let i=-0; i < mlData.data.Deaths.length ; i++) {%>
-                                    <p><%= mlData.data.Deaths[i].text; %></p>
+                                    <div class="card">
+                                        <div class="card-body">
+                                    <h6><%= mlData.data.Deaths[i].text; %></h6>
                                     <p><%= mlData.data.Deaths[i].year; %></p>
                                     <!-- <p><%= mlData.data.Deaths[i].no_year_html; %></p> -->
-                                <% } %>
                                 
+                                </div>
+                            </div>
+                                    <% } %>
+                           
                             </div>
 
 
