@@ -53,6 +53,7 @@
                                 <h2>Astronomy Picture Of the Day</h2>
                                 <div class="">
                                     <h3><%= data.title %></h3>
+                                    <p> <%= data.date %> </p>
                                     <img src="<%= data.url %>" alt="image from NASA">
                                     <p> <%= data.explanation %> </p>
                                 </div>
@@ -62,9 +63,7 @@
                             <% if (data) { %>
                             <h2>On This Day</h2>
                             <div class="">
-                                <h3><%= data.title %></h3>
-                                <img src="<%= data.url %>" alt="image from NASA">
-                                <p> <%= data.explanation %> </p>
+                                
                             </div>
                             <% } %>
                         </div>
