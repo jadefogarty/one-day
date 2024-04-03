@@ -34,7 +34,7 @@
         <div class="container content">
             <div class="row">
 
-                <div class="row">
+                
 
                     <div class="row">
                         <form action="/date" method="get"> 
@@ -45,30 +45,66 @@
                     </div>
 
 
-                    <div class="container main-content-title">
-                        <div class="col title-col">
+                    <div class="row">
+                        <div class="row">
                             
 
-                            <% if (data) { %>
+                            <% if (nasaData) { %>
                                 <h2>Astronomy Picture Of the Day</h2>
                                 <div class="">
-                                    <h3><%= data.title %></h3>
-                                    <p> <%= data.date %> </p>
-                                    <img src="<%= data.url %>" alt="image from NASA">
-                                    <p> <%= data.explanation %> </p>
+                                    <h3><%= nasaData.title %></h3>
+                                    <p> <%= nasaData.date %> </p>
+                                    <img src="<%= nasaData.url %>" alt="image from NASA">
+                                    <p> <%= nasaData.explanation %> </p>
                                 </div>
                                 <% } %>
                         </div>
-                        <div class="col title-col">
-                            <% if (data) { %>
-                            <h2>On This Day</h2>
+                        <div class="row">
+                            <% if (mlData) { %>
+                            <div class="col-sm">
+                            
                             <div class="">
                                 
+                                <h3>Events: </h3>
+                                <% for(let i=-0; i < mlData.data.Events.length ; i++) {%>
+                                    <p><%= mlData.data.Events[i].text; %></p>
+                                    <p><%= mlData.data.Events[i].year; %></p>
+                                    <!-- <p><%= mlData.data.Events[i].no_year_html; %></p> -->
+                                <% } %>
+                                
                             </div>
-                            <% } %>
+                            
                         </div>
+
+                        <div class="col-sm">
+                            <div class="">
+                                <h3>Births: </h3>
+                                <% for(let i=-0; i < mlData.data.Births.length ; i++) {%>
+                                    <p><%= mlData.data.Births[i].text; %></p>
+                                    <p><%= mlData.data.Births[i].year; %></p>
+                                    <!-- <p><%= mlData.data.Births[i].no_year_html; %></p> -->
+                                <% } %>
+                                
+                            </div>
+                        </div>
+
+                        <div class="col-sm">
+                            <div class="">
+                                <h3>Deaths: </h3>
+                                <% for(let i=-0; i < mlData.data.Deaths.length ; i++) {%>
+                                    <p><%= mlData.data.Deaths[i].text; %></p>
+                                    <p><%= mlData.data.Deaths[i].year; %></p>
+                                    <!-- <p><%= mlData.data.Deaths[i].no_year_html; %></p> -->
+                                <% } %>
+                                
+                            </div>
+
+
+                        </div>
+                        <% } %>
                     </div>
-                </div>
+                    </div>
+                
 
 
             </div>
