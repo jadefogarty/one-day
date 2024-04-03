@@ -39,7 +39,7 @@
                     <div class="row">
                         <form action="/date" method="get"> 
                             <label class="dateLabel" for="selectDate"> Select date: </label>
-                            <input class="dateInput" type="date"  id="selectedDate" name="Date" value="">
+                            <input class="dateInput" type="date" id="selectedDate" name="Date" max="" required>
                             <button type="submit" class="btn"> Submit </button>
                         </form>
                     </div>
@@ -48,6 +48,14 @@
                     <div class="container main-content-title">
                         <div class="col title-col">
                             <h2>Astronomy Picture Of the Day</h2>
+
+                            <% if (data) { %>
+                                <div class="">
+                                    <h3><%= data.title %></h3>
+                                    <img src="<%= data.url %>" alt="image from NASA">
+                                    <p> <%= data.explanation %> </p>
+                                </div>
+                                <% } %>
                         </div>
                         <div class="col title-col">
                             <h2>On This Day</h2>
