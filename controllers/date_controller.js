@@ -2,12 +2,14 @@ const data_model = require('../models/data_model');
 
 //GET /
 function date_index(req, res) {
-    res.render('index', { data: null });
+    console.log("date controller called")
+    res.render('index', { nasaData: null, mlData: null });
 };
 
 //GET /date
 async function search_date(req, res) {
     try {
+        console.log("search date function called")
         const date = req.query.Date;
         console.log(date)
 
