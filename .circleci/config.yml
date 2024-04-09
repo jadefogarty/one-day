@@ -42,3 +42,4 @@ jobs:
     steps:
       - run:
           name: deploy-application
+          command: npm install
