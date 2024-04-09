@@ -9,6 +9,11 @@ workflows:
             branches:
               only:
                 - dev
+      - build:
+          filters:
+            branches:
+              only:
+                - main
       - deploy:
           filters:
             branches:
