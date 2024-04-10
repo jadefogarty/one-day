@@ -3,6 +3,8 @@
 
 <head>
     <title> One Day Project </title>
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
     <!-- custom css -->
     <link rel="stylesheet" href="/css/styles.css">
     <!-- bootstrap css -->
@@ -17,113 +19,145 @@
 
     <div class="container-fluid justify-content-center align-items-center" id="wrapper">
         <!-- header  -->
-        <div class="row ">
-            <div class="header align-items-center">
-                <div class="header-img">
-                    <img src="images/logo.jpg" alt="logo" heignt="130px" width="130px">
+        <div class="container">
+            <div class="row ">
+                <div class="header align-items-center">
+                    <div class="header-img">
+                        <img src="images/logo.png" alt="logo" heignt="70px" width="70px">
+                    </div>
+
+                    <div class="header-title">
+                        <h1>One Day Project</h1>
+                    </div>
                 </div>
 
-                <div class="header-title">
-                    <h1>One Day Project</h1>
-                </div>
             </div>
-
         </div>
 
         <!-- main content -->
         <div class="container content">
-            <div class="row">
+            <div class="row content-row">
 
-                
+                <div id="page-divider">
 
-                    <div class="row">
-                        <form action="/date" method="get"> 
-                            <label class="dateLabel" for="selectDate"> Select date: </label>
-                            <input class="dateInput" type="date" id="selectedDate" name="Date" max=""  required>
-                            <button type="submit" class="btn"> Submit </button>
-                        </form>
-                    </div>
+                </div>
 
 
-                    <div class="row">
-                        <div class="row">
-                            
+                <div class="row form-row">
+                    <form action="/date" method="get" class="date-form">
+                        <label class="dateLabel" for="selectDate"> Select date: </label>
+                        <input class="dateInput" type="date" id="selectedDate" name="Date" max="" required>
+                        <button type="submit" class="submit-btn"> Submit </button>
+                    </form>
+                </div>
 
-                            <% if (nasaData) { %>
-                                <h3>Astronomy Picture Of the Day</h3>
-                                <div class="">
-                                    <h5><%= nasaData.title %></h5>
-                                    <p> <%= nasaData.date %> </p>
-                                    <div class="nasa-img-div">
-                                        <img src="<%= nasaData.url %>" alt="image from NASA" class="nasa-img">
-                                    </div>
-                                        <p> <%= nasaData.explanation %> </p>
+
+                <div class="row data-row">
+                    <div class="container nasa-data">
+
+
+
+                        <% if (nasaData) { %>
+                            <div id="page-divider">
+
+                            </div>
+                            <h3>Astronomy Picture Of the Day</h3>
+                            <div class="nasa-data">
+                                <h5>
+                                    <%= nasaData.title %>
+                                </h5>
+                                <p>Date: <%= nasaData.date %>
+                                </p>
+                                <div class="nasa-img-div">
+                                    <img src="<%= nasaData.url %>" alt="image from NASA" class="nasa-img">
                                 </div>
-                                <% } %>
-                        </div>
-                        <div class="row">
-                            <% if (mlData) { %>
+                                <p>
+                                    <%= nasaData.explanation %>
+                                </p>
+                            </div>
+                            <% } %>
+                    </div>
+                    <div class="row">
+
+                        <% if (mlData) { %>
+
+                            <div id="page-divider">
+
+                            </div>
+                            <h3> This Date in Previous Years</h3>
                             <div class="col-sm">
-                            
+
                                 <h3>Events: </h3>
-                                <div class="card-deck">
-                                    
+                                <div class="card-deck ml-card-deck">
+
                                     <% for(let i=-0; i < mlData.data.Events.length ; i++) {%>
-                                        <div class="card">
+                                        <div class="card" id="ml-card">
                                             <div class="card-body">
-                                        <h6><%= mlData.data.Events[i].text; %></h6>
-                                        <p><%= mlData.data.Events[i].year; %></p>
-                                        <!-- <p><%= mlData.data.Events[i].no_year_html; %></p> -->
-                                    
-                                    </div>
-                                </div>
+                                                <h6>Year: <%= mlData.data.Events[i].year; %>
+                                                </h6>
+                                                <p>
+                                                    <%= mlData.data.Events[i].text; %>
+                                                </p>
+
+                                                <!-- <p><%= mlData.data.Events[i].no_year_html; %></p> -->
+
+                                            </div>
+                                        </div>
                                         <% } %>
-                               
-                                </div>
-                            
-                        </div>
 
-                        <div class="col-sm">
-                            <h3>Births: </h3>
-                            <div class="card-deck">
-                                
-                                <% for(let i=-0; i < mlData.data.Births.length ; i++) {%>
-                                    <div class="card">
-                                        <div class="card-body">
-                                    <h6><%= mlData.data.Births[i].text; %></h6>
-                                    <p><%= mlData.data.Births[i].year; %></p>
-                                    <!-- <p><%= mlData.data.Births[i].no_year_html; %></p> -->
-                                
                                 </div>
-                            </div>
-                                    <% } %>
-                           
-                            </div>
-                        </div>
 
-                        <div class="col-sm">
-                            <h3>Deaths: </h3>
-                            <div class="card-deck">
-                                
-                                <% for(let i=-0; i < mlData.data.Deaths.length ; i++) {%>
-                                    <div class="card">
-                                        <div class="card-body">
-                                    <h6><%= mlData.data.Deaths[i].text; %></h6>
-                                    <p><%= mlData.data.Deaths[i].year; %></p>
-                                    <!-- <p><%= mlData.data.Deaths[i].no_year_html; %></p> -->
-                                
+                            </div>
+
+                            <div class="col-sm">
+                                <h3>Births: </h3>
+                                <div class="card-deck ml-card-deck">
+
+                                    <% for(let i=-0; i < mlData.data.Births.length ; i++) {%>
+                                        <div class="card" id="ml-card">
+                                            <div class="card-body">
+                                                <h6>Year: <%= mlData.data.Births[i].year; %>
+                                                </h6>
+                                                <p>
+                                                    <%= mlData.data.Births[i].text; %>
+                                                </p>
+
+                                                <!-- <p><%= mlData.data.Births[i].no_year_html; %></p> -->
+
+                                            </div>
+                                        </div>
+                                        <% } %>
+
                                 </div>
                             </div>
-                                    <% } %>
-                           
+
+                            <div class="col-sm">
+                                <h3>Deaths: </h3>
+                                <div class="card-deck ml-card-deck">
+
+                                    <% for(let i=-0; i < mlData.data.Deaths.length ; i++) {%>
+                                        <div class="card" id="ml-card">
+                                            <div class="card-body">
+                                                <h6>Year: <%= mlData.data.Deaths[i].year; %>
+                                                </h6>
+                                                <p>
+                                                    <%= mlData.data.Deaths[i].text; %>
+                                                </p>
+
+                                                <!-- <p><%= mlData.data.Deaths[i].no_year_html; %></p> -->
+
+                                            </div>
+                                        </div>
+                                        <% } %>
+
+                                </div>
+
+
                             </div>
-
-
-                        </div>
-                        <% } %>
+                            <% } %>
                     </div>
-                    </div>
-                
+                </div>
+
 
 
             </div>

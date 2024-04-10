@@ -1,11 +1,182 @@
-.nasa-img-div{
-    height: 300px;
-    width: 50%;
+body {
+    overflow-x: hidden;
+}
+
+#wrapper {
+    background-color: #282627;
+    padding-bottom: 100px;
+    min-height: 100vh;
+}
+
+.row {
+    justify-content: center;
+}
+
+h1, h2, h3, h4, h5, h6, label {
+    color: #4c814b;
+}
+
+p {
+    color: #b3d5b7;
+}
+
+#page-divider{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: 2px solid #b3d5b7;
+    height: 5px;
+}
+
+.header {
+    display: flex;
+    padding: 15px;
+    justify-content: center;
 
 }
 
-.nasa-img{
+.header-img {
+    flex-grow: 1;
+}
+
+.header-title {
+    flex-grow: 4;
+}
+
+.form-row {
+    margin-top: 10px;
+    /* margin-bottom: 15px; */
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+.content-row {
+    width: 100%;
+    ;
+}
+
+.date-form {
+    display: flex;
+    justify-content: center;
+}
+
+.dateLabel {
+    padding: 5px
+}
+
+.dateInput {
+    background-color: #b3d5b7;
+    color: #282627;
+    padding: 5px;
+    margin-right: 15px;
+    margin-left: 5px;
+    border: 2px inset #4c814b;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    background-color: #282627;
+    border: 2px solid #4c814b;
+    border-radius: 5px;
+    padding: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #4c814b;
+
+}
+
+.submit-btn:hover {
+    background-color: #4c814b;
+    color: #282627;
+}
+
+.data-row{
+    display: flex;
+    justify-content: center;
+}
+
+.nasa-data{
+    
+    justify-content: center;
+}
+.nasa-img-div {
+    height: 300px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.nasa-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+
+#ml-card{
+    background-color: #282627;
+    border: 2px outset #282627;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 7px;
+}
+.ml-card-deck{
+    height: 700px;
+    overflow-y: scroll; 
+}
+
+
+.footer{
+    height: 100px;
+}
+
+/* cards with tables scrollbar */
+/* width */
+.ml-card-deck::-webkit-scrollbar {
+    width: 8px;
+}
+  
+  /* Track */
+  .ml-card-deck::-webkit-scrollbar-track {
+    background: #363536; 
+}
+   
+  /* Handle */
+  .ml-card-deck::-webkit-scrollbar-thumb {
+    background: #4c814b; 
+}
+  
+  /* Handle on hover */
+  .ml-card-deck::-webkit-scrollbar-thumb:hover {
+    background: #4c814b; 
+}
+
+.ml-card-deck::-webkit-scrollbar-button {
+    background-color: #363536;
+}
+
+
+#error-wrapper {
+    background-color: #282627;
+    height: 100vh;
+    padding-bottom: 100px;
+}
+#home-btn {
+    background-color: #282627;
+    border: 2px solid #4c814b;
+    border-radius: 5px;
+    padding: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #4c814b;
+
+}
+
+#home-btn:hover {
+    background-color: #4c814b;
+    color: #282627;
 }
