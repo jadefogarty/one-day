@@ -24,11 +24,16 @@ async function search_date(req, res) {
         console.log("Day:", day);
 
         const nasaApiData = await data_model.callNasaApi(date);
-        console.log(nasaApiData);
+        //console.log(nasaApiData);
 
         const mlApiData = await data_model.callMlApi(month, day);
-        console.log(mlApiData);
-        res.render('index', { nasaData: nasaApiData, mlData: mlApiData });
+        //console.log(mlApiData);
+
+        const tmdbApiData = await data_model.callTMDBApi(date);
+        console.log(tmdbApiData);
+
+        
+        res.render('index', { nasaData: nasaApiData, mlData: mlApiData, tmdbData: tmdbApiData });
     }
     catch (error) {
         res.render('error', { error: error })

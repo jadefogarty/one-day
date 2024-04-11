@@ -180,3 +180,19 @@ p {
     background-color: #4c814b;
     color: #282627;
 }
+
+#tmdb-card{
+    background-color: #282627;
+    border: 2px outset #282627;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 7px;
+    width: 40%;
+}
+.tmdb-card-deck{
+    /* height: 700px;
+    overflow-y: scroll;  */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
