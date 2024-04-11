@@ -156,6 +156,27 @@
                             </div>
                             <% } %>
                     </div>
+                    <div class="row">
+                        <% if (tmdbData) { %>
+
+                            <div id="page-divider">
+
+                            </div>
+                            <h3> Movies Released on this Day</h3>
+                            <div class="card-deck tmdb-card-deck">
+                            <% for(let i=-0; i < 6 ; i++) {%>
+                                <div class="card" id="tmdb-card">
+                                    <div class="card-body">
+                                        <p><%= tmdbData.results[i].title; %> </p>
+                                    </div>
+                                </div>
+                                <% } %>
+
+                            </div>
+
+                            <% }%>
+
+                    </div>
                 </div>
 
 
