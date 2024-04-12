@@ -1,11 +1,12 @@
 const axios = require('axios');
-
+require('dotenv').config()
+// console.log(process.env)
 
 const callNasaApi = async (date) => {
     try {
         console.log("call nasa API called")
         const api_key = "eOUQWfv4Hiq8j4eQbJbyyVjEQqPfuaXGyEx6U28S"
-        const baseUrl = "https://api.nasa.gov/planetary/apod?api_key="+api_key
+        const baseUrl = "https://api.nasa.gov/planetary/apod?api_key="+process.env.NASA_API_KEY
         const mainUrl =  baseUrl + "&date=" +date
         console.log("calling nasa api url: ", mainUrl)
 
@@ -36,7 +37,7 @@ const callTMDBApi = async (date) => {
 
         console.log("call tmdb API called")
         const api_key = "2341459d5be1d250fd6cc6d2d896c9c2"
-        const baseUrl = "https://api.themoviedb.org/3/discover/movie?api_key="+api_key
+        const baseUrl = "https://api.themoviedb.org/3/discover/movie?api_key="+process.env.TMDB_API_KEY
         const mainUrl = baseUrl+"&include_adult=false&language=en-US&page=1&primary_release_date.gte="+ date + "&primary_release_date.lte=" + date + "&sort_by=popularity.desc"
 
         console.log("calling tmdb api url: ", mainUrl)

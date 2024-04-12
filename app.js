@@ -1,9 +1,9 @@
-var createError = require('http-errors');
+const createError = require('http-errors');
 const express = require('express');
 const app = express();
 //const PORT = 9876;
 const path = require('path');
-var cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 
 const date_routes = require('./routes/date_routes');
 
