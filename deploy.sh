@@ -9,5 +9,7 @@ cd one-day/
 npm install
 # echo $PRIVATE_KEY > privatekey.pem
 # echo $SERVER > server.crt
+echo "NASA_API_KEY=$NASA_API_KEY" > .env
+echo "TMDB_API_KEY=$TMDB_API_KEY" >> .env
 # Start the application with the process name devopssec_app using pm2
 pm2 start ./bin/www --name devopssec_app
