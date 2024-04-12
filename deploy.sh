@@ -7,8 +7,9 @@ pm2 stop devopssec_app
 cd one-day/
 # Install application dependancies
 npm install
-# echo $PRIVATE_KEY > privatekey.pem
-# echo $SERVER > server.crt
+#import enviornmental variables
+echo $PRIVATE_KEY > privatekey.pem
+echo $SERVER > server.crt
 echo "NASA_API_KEY=$NASA_API_KEY" > .env
 echo "TMDB_API_KEY=$TMDB_API_KEY" >> .env
 # Start the application with the process name devopssec_app using pm2
