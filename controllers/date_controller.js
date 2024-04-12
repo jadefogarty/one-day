@@ -3,7 +3,7 @@ const data_model = require('../models/data_model');
 //GET /
 function date_index(req, res) {
     console.log("date controller called")
-    res.render('index', { nasaData: null, mlData: null });
+    res.render('index', { nasaData: null, mlData: null, tmdbData: null });
 };
 
 //GET /date
